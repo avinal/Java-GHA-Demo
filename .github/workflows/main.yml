@@ -7,17 +7,17 @@ on:
 jobs:
   build:
   
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
   
-  steps:
-  - uses: actions/checkout@v2
-  - name: Set up Java Env
-    uses: actions/setup-java@v2
-    with:
-      java-version: '14'
-      distribution: 'apopt'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Java Env
+      uses: actions/setup-java@v2
+      with:
+        java-version: '14'
+        distribution: 'apopt'
       
-  - name: Build this with Maven
-    run: mvn -B compile --file pom.xml
+    - name: Build this with Maven
+      run: mvn -B compile --file pom.xml
     
   
