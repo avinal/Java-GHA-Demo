@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '14'
-        distribution: 'apopt'
+        distribution: 'adopt'
       
     - name: Build this with Maven
       run: mvn -B compile --file pom.xml
