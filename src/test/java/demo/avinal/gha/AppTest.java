@@ -19,7 +19,7 @@ public class AppTest {
     @Test
     @DisplayName("Should reverse names")
     public void testReversal() {
-        assertEquals("jijoi", App.reversal("Avinal"));
+        assertEquals("lanivA", App.reversal("Avinal"));
         assertEquals("avaJ", App.reversal("Java"));
     }
 }
