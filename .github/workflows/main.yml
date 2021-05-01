@@ -19,5 +19,11 @@ jobs:
       
     - name: Build this with Maven
       run: mvn -B compile --file pom.xml
+      
+    - name: Test this with Maven
+      run: mvn -B test --file pom.xml
+      
+    - name: Package this with Maven
+      run: mvn -B package --file pom.xml
     
   
