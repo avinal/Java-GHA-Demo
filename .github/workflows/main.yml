@@ -1,0 +1,34 @@
+name: Just check if it works
+
+on:
+  push:
+    branches: [ master ]
+    
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Java Env
+      uses: actions/setup-java@v2
+      with:
+        java-version: '14'
+        distribution: 'adopt'
+      
+    - name: Build this with Maven
+      run: mvn -B compile --file pom.xml
+      
+    - name: Test this with Maven
+      run: mvn -B test --file pom.xml
+      
+    - name: Package this with Maven
+      run: mvn -B package --file pom.xml
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Java-GHA-Demo-1.0.0.jar
+        path: /home/runner/work/Java-GHA-Demo/Java-GHA-Demo/target/Java-GHA-Demo-1.0.0.jar
+    
+  
