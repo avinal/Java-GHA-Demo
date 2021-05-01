@@ -25,5 +25,10 @@ jobs:
       
     - name: Package this with Maven
       run: mvn -B package --file pom.xml
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Java-GHA-Demo-1.0.0.jar
+        path: /home/runner/work/Java-GHA-Demo/Java-GHA-Demo/target/Java-GHA-Demo-1.0.0.jar
     
   
